@@ -9,7 +9,7 @@ function genererPieces(pieces){
         const figure = pieces[i];
         // Récupération de l'élément du DOM qui accueillera les fiches
         const sectionFiches = document.querySelector(".gallery");
-        // Création d’une balise dédiée à une pièce automobile
+        // Création d’une balise dédiée à une figure d'images
         const pieceElement = document.createElement("figure");
         // Création des balises 
         const imageElement = document.createElement("img");
@@ -26,7 +26,7 @@ function genererPieces(pieces){
      
     }
     
-    document.querySelector(".gallery").innerHTML = "";
+    
         genererPieces(pieces);
 
 
@@ -69,3 +69,6 @@ function genererPieces(pieces){
             document.querySelector(".gallery").innerHTML = "";
             genererPieces(piecesFiltrees);
         });
+
+
+        

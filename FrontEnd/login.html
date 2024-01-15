@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+	<!-- <script type="module" src="/works.js"></script> -->
+</head>
+<body>
+<header>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<nav>
+		<ul>
+			<li>projets</li>
+			<li>contact</li>
+			<li>login</li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
+	</nav>
+</header>
+<main>
+    <section id="contact">
+		<h2>Log In</h2>
+		<form action="#" method="post">
+            <label for="email">Email</label>
+			<input type="email" name="email" id="email">
+			<label for="password">Mot de passe</label>
+			<input type="password" name="password" id="password">
+			<input type="submit" value="se connecter">
+		</form>
+	</section>
+</main>
+
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+<script>
+    const form = document.querySelector('#contact');
+
+    form.addEventListener("submit", (event) => {
+        // On empêche le comportement par défaut
+        event.preventDefault();
+        console.log("Il n’y a pas eu de rechargement de page");
+
+        // On récupère les deux champs et on affiche leur valeur
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+       if(email === ){
+        console.log(ok)
+       } else{
+        console.log("Une erreur est survenue : ")
+       }
+
+       
+       
+       
+       
+       
+        // console.log(password);
+        // console.log(email);
+});
+
+</script>
+</body>
+</html>
