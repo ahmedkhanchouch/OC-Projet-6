@@ -1,5 +1,5 @@
-const reponse = fetch("http://localhost:5678/api/users/POST/login");
-console.log(reponse)
+// const reponse = fetch("http://localhost:5678/api/users/POST/login");
+// console.log(reponse)
 	
 //     const form = document.querySelector('#contact');
 //     form.addEventListener("submit", (event) => {
@@ -25,3 +25,25 @@ console.log(reponse)
 //         // console.log(password);
 //         // console.log(email);
 // });
+
+async function login(email, password) {
+    const url = 'http://localhost:5678/api/users/login';
+    const response = await fetch(url, {
+        method: 'POST', 
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email, password})});
+    const responseData = await response.json();
+    localStorage.setItem('userId', responseData.userId);
+    localStorage.setItem('token', responseData.token);
+}
+
+document.querySelector('#contact form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    login(email, password);
+    return false;
+})
+

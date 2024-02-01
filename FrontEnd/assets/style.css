@@ -287,6 +287,13 @@ footer nav ul {
 	
 	
 }
+.js-modal-close{
+	position: absolute;
+	right: 12px;
+	background: white;
+	border: none;
+	cursor: pointer;
+}
 .gallery-modal{
 	padding: 20px;
 	margin: auto;
@@ -296,13 +303,6 @@ footer nav ul {
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 	
-}
-.js-modal-close{
-	position: absolute;
-	right: 12px;
-	background: white;
-	border: none;
-	cursor: pointer;
 }
 .gallery-modal figure{
 	position: relative;
@@ -337,55 +337,17 @@ figure .js-modal-delete{
 	align-items: center;
 }
 
-
-
-/* style modal 2  */
-.modal2 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.8);
-}
-
-.modal-wrapper2{
-	width: 600px;
-	padding: 25px;
-	max-width: calc(100vw-20px);
-	max-height: calc(100vh -20px);
-	overflow: auto;
-	border-radius: 0.625rem;
-	background: #FFF;
-	position: relative;
-	
-	
-}
-form{
+.modal-wrapper form{
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 	justify-content: center;
 	width: 100%;
 	margin: auto;
 	gap: 12px;
 }
-form label{
-	text-align: start;
-}
-form input{
-	background: #FFF;
-	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
-	
-	width: 26.25rem;
-	height: 3.1875rem;
-	flex-shrink: 0;
-	border: none;
-	
-}
+
+
 .input-image{
 	display: flex;
 	flex-direction: column;
@@ -409,21 +371,21 @@ form input{
 }
 .input-image input{
 	width: 10.8125rem;
-height: 2.25rem;
-flex-shrink: 0;
-border-radius: 3.125rem;
-background: #CBD6DC;
-display: flex;
-justify-content: center;
-align-items: center;
+	height: 2.25rem;
+	flex-shrink: 0;
+	border-radius: 3.125rem;
+	background: #CBD6DC;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-color: #306685;
-text-align: center;
-font-family: "Work Sans";
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+	color: #306685;
+	text-align: center;
+	font-family: "Work Sans";
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
 }
 
 .fa-image{
@@ -434,6 +396,16 @@ line-height: normal;
 	height: 4.75rem;
 	flex-shrink: 0;
 }
+.image-form input[type="text"]{
+	background: #FFF;
+	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+	
+	width: 26.25rem;
+	height: 3.1875rem;
+	flex-shrink: 0;
+	border: none;
+	
+}
 form select{
 	background: #FFF;
 	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
@@ -442,6 +414,18 @@ form select{
 	height: 3.1875rem;
 	flex-shrink: 0;
 	border: none;
+}
+.js-modal-back{
+	position: absolute;
+	left: 12px;
+	background: white;
+	border: none;
+	cursor: pointer;
+}
+/* style modal 2  */
+/* 
+form label{
+	text-align: start;
 }
 .modal2 h1{
 	color: #000;
@@ -452,11 +436,4 @@ form select{
 	font-weight: 400;
 	line-height: normal;
 	padding: 20px;
-}
-.js-modal-back{
-	position: absolute;
-	left: 12px;
-	background: white;
-	border: none;
-	cursor: pointer;
-}
+} */

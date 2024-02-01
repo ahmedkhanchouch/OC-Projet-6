@@ -36,7 +36,7 @@ function genererPiecesmodal(pieces){
         // Création des balises 
         const imageElement = document.createElement("img");
         imageElement.src = figure.imageUrl;
-        // creatio de buttopn supprimer 
+        // creation de button supprimer 
         const imagedelete =document.createElement("button");
         imagedelete.setAttribute('class','js-modal-delete')
         imagedelete.innerHTML = '<i class="fa-solid fa-trash-can"></i>' 
@@ -97,8 +97,7 @@ function genererPiecesmodal(pieces){
 
         
 
-        // modal bloc 
-        let modal = null 
+        // modal bloc  
 
         const openModal = function (e) {
             e.preventDefault();
@@ -106,21 +105,27 @@ function genererPiecesmodal(pieces){
             target.style.display = null 
             target.removeAttribute('aria-hidden')
             target.setAttribute('aria-modal','true')
-            modal = target
+            
+            const modal = target
+            
             modal.addEventListener('click' , closeModal)
             modal.querySelector('.js-modal-close').addEventListener('click' , closeModal)
+            modal.querySelector('#modal.js-modal-close').addEventListener('click' , closeModal)
             modal.querySelector('.js-modal-stop').addEventListener('click' , stopPropagation)
-        }
-        const closeModal = function(e){
-            if ( modal === null) return
-            e.preventDefault();
-            modal.style.display = "none" 
-            modal.setAttribute('aria-hidden' , 'true')
-            modal.removeAttribute('aria-modal')
-            modal.removeEventListener('click' , closeModal)
-            modal.querySelector('.js-modal-close').removeEventListener('click' , closeModal)
-            modal.querySelector('.js-modal-stop').removeEventListener('click' , stopPropagation)
-            modal = null
+
+            const closeModal = function(e){
+                if ( modal === null) return
+                e.preventDefault();
+                modal.style.display = "none" 
+                modal.setAttribute('aria-hidden' , 'true')
+                modal.removeAttribute('aria-modal')
+                modal.removeEventListener('click' , closeModal)
+                modal.querySelector('.js-modal-close').removeEventListener('click' , closeModal)
+                modal.querySelector('.js-modal-stop').removeEventListener('click' , stopPropagation)
+                modal = null
+                
+            }
+
             
         }
 
@@ -137,3 +142,19 @@ function genererPiecesmodal(pieces){
                 closeModal(e)
             }
         })
+
+
+
+        document.querySelector ('.modal .js-modal-delete').addEventListener('click' , async function (e) {
+            const id = 1;
+            const url = 'http://localhost:5678/api/works/' + id;
+            const response = await fetch(url, {
+                method: 'delete', 
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${localStorage.getItem('token')}`,
+                }
+        })
+
+            
+});
