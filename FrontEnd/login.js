@@ -26,6 +26,13 @@
 //         // console.log(email);
 // });
 
+
+    const myFunction = function (e) {
+        e.preventDefault();
+        
+      }
+
+
 async function login(email, password) {
     const url = 'http://localhost:5678/api/users/login';
     const response = await fetch(url, {
@@ -44,6 +51,7 @@ document.querySelector('#contact form').addEventListener('submit', (e) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     login(email, password);
+    location.replace("index.html")
     return false;
 })
 
