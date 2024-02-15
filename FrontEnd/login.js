@@ -27,12 +27,6 @@
 // });
 
 
-    const myFunction = function (e) {
-        e.preventDefault();
-        
-      }
-
-
 async function login(email, password) {
     const url = 'http://localhost:5678/api/users/login';
     const response = await fetch(url, {
@@ -41,9 +35,11 @@ async function login(email, password) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({email, password})});
-    const responseData = await response.json();
-    localStorage.setItem('userId', responseData.userId);
-    localStorage.setItem('token', responseData.token);
+        if( response.status === 200){
+        const responseData = await response.json();
+        localStorage.setItem('userId', responseData.userId);
+        localStorage.setItem('token', responseData.token);
+    }
 }
 
 document.querySelector('#contact form').addEventListener('submit', (e) => {

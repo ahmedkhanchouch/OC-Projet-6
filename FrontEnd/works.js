@@ -109,6 +109,9 @@ function genererPiecesmodal(pieces){
             target.setAttribute('aria-modal','true')
             modal = target ;
             modal.addEventListener('click' , closeModal)
+            modal.querySelectorAll('.js-modal-close').forEach(elt => elt.addEventListener('click' , closeModal))
+            // modal.querySelector('#modal.js-modal-close').addEventListener('click' , closeModal)
+            modal.querySelector('.js-modal-stop').addEventListener('click' , stopPropagation)
         }
             
 
@@ -124,9 +127,6 @@ function genererPiecesmodal(pieces){
             modal = null
 
         }
-            modal.querySelectorAll('.js-modal-close').addEventListener('click' , closeModal)
-            // modal.querySelector('#modal.js-modal-close').addEventListener('click' , closeModal)
-            modal.querySelector('.js-modal-stop').addEventListener('click' , stopPropagation)
 
           
                 
